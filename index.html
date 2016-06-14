@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+      <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="main.css" rel="stylesheet" />
+      <script src="angular.min.js"></script>
+ <script src="MainController.js"></script>
+       <script src="app.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="header">
+      <div class="container">
+        <h1>Another E-Commerce Site!</h1>
+          <p>Created as part of my FOSS assignment.</p>
+      </div>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+
+        <h1>{{ title }}</h1>
+        <h2>{{ promo }}</h2>
+
+          <h2>{{ bookpromo }}</h2>
+        <div ng-repeat="book in books" class="col-md-6"> 
+  				<div class=""> 
+    				<img ng-src="{{ book.cover }}"> 
+    				<p class="title">{{ book.name }}</p> 
+				    <p class="price">{{ book.price | currency:'&#8377;' }}</p> 
+				    
+				    
+  				</div> 
+				</div>
+<h2>{{ electronicspromo }}</h2>
+          <div ng-repeat="electronic in electronics" class="col-md-6"> 
+  				<div class=""> 
+    				<img ng-src="{{ electronic.cover }}"> 
+    				<p class="title">{{ electronic.name }}</p> 
+				    <p class="price">{{ electronic.price | currency:'&#8377;' }}</p> 
+          
+      </div>
+        
+    </div>
+      
+
+    <div class="footer">
+      <div class="container">
+        <h2>I am xScientist</h2>
+          <p>* : This site doesn't actually exist. Just like Santa Claus, Hogwarts, Unicorns and God.</p>
+      </div>
+    </div>
+  </body>
+</html>
